@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./RightSidebar.module.css";
+import axios from "axios";
 
 const RightSidebar = () => {
     const [formData, setFormData] = useState({
@@ -19,6 +20,18 @@ const RightSidebar = () => {
         e.preventDefault();
         console.log("New Product:", formData);
         // You can handle API or state updates here
+
+        axios.post("http://localhost:8080/api/products/addProduct", {
+            name: formData.name,
+            price: formData.price,
+            quantity: formData.quantity
+        })
+        .then(response => {
+            console.log("product added to db",response.data);
+        })
+        .catch(error => {
+            console.error("error adding product",error);
+        });
     };
 
     return (

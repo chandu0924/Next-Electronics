@@ -26,13 +26,13 @@ router.get("/product/:id", async (req, res) => {
 // Add a new product  
 router.post("/addProduct", async (req, res) => {
   try {
-    const { name, price, category } = req.body;
+    const { name, price, quantity } = req.body;
 
-    if (!name || !price || !category) {
+    if (!name || !price || !quantity) {
       return res.status(400).json({ message: "Missing required fields" });
     }
 
-    const newProduct = new Product({ name, price, category });
+    const newProduct = new Product({ name, price, quantity });
     await newProduct.save();
     res.status(201).json(newProduct);
   } catch (err) {
@@ -43,11 +43,11 @@ router.post("/addProduct", async (req, res) => {
 // Edit a product
 router.put("/editProduct/:id", async (req, res) => {
   try {
-    const { name, price, category } = req.body;
+    const { name, price, quantity } = req.body;
 
     const updatedProduct = await Product.findByIdAndUpdate(
       req.params.id,
-      { name, price, category },
+      { name, price, quantity },
       { new: true, runValidators: true }
     );
 
