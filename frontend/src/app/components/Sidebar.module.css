@@ -1,0 +1,27 @@
+.mainContainer {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  max-width: 200px;
+}
+
+.title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.filterOption {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+}
+
+.filterOption input[type="checkbox"] {
+  margin-right: 0.5rem;
+  accent-color: #0070f3;
+}
