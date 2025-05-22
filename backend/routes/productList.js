@@ -23,7 +23,7 @@ router.get("/product/:id", async (req, res) => {
   }
 });
 
-// Add a new product
+// Add a new product  
 router.post("/addProduct", async (req, res) => {
   try {
     const { name, price, category } = req.body;

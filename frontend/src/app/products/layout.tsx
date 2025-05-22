@@ -1,4 +1,5 @@
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../components/Sidebar/Sidebar";
+import RightSidebar from "../components/RightSidebar/RightSidebar";
 
 const ProductsLayout = ({children}: {children: React.ReactNode;}) => {
     return (
@@ -9,6 +10,9 @@ const ProductsLayout = ({children}: {children: React.ReactNode;}) => {
             <main style={{flex: 1, padding: "1rem"}}>
                 {children}
             </main>
+            <aside style={{width: "350px"}}>
+                <RightSidebar />
+            </aside>
         </div>
     )
 }
